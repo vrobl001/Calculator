@@ -60,3 +60,7 @@ body {
     font-weight: bold;
     font-size: 30px;
 }
+
+.button:focus {
+    outline: none;
+}
