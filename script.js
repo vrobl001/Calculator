@@ -15,6 +15,8 @@ function clearAll() {
 }
 
 function handleDisplay() {
+    if (currentOperand.innerHTML < 1)
+        return String(parseFloat(currentOperand.innerHTML));
     if (currentOperand.innerHTML) {
         currentOperand.innerHTML = parseFloat(
             currentOperand.innerHTML.replace(/,/g, '')
@@ -76,6 +78,7 @@ equalsButton.addEventListener('click', button => {
 });
 
 decimalButton.addEventListener('click', button => {
+    if (needsReset == 'true') handleNeedsReset();
     // Prevents user from entering more than one decimal
     if (!currentOperand.innerHTML.includes('.')) {
         currentOperand.innerHTML = currentOperand.innerHTML + '.';
