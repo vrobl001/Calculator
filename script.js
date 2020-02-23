@@ -57,7 +57,7 @@ operationButtons.forEach(button => {
         }
         // Allows a user to create a previous operand only if the current operand exists and is a number
         if (
-            !isNaN(currentOperand.innerHTML) &&
+            !isNaN(parseFloat(currentOperand.innerHTML)) &&
             currentOperand.innerHTML &&
             !previousOperand.innerHTML
         ) {
